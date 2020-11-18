@@ -1,0 +1,21 @@
+{% extends 'main/main.html' %}
+
+{% block title%}
+Airspace
+{% endblock %}
+
+{% block body%}
+<div class="container">
+    <form method="get">
+        <p>Airspace</p>
+        <p><select size="20" name="airspace_ccode">
+            {% for key, value in countries.items %}
+            <option value="{{ key }}">{{ value }} ({{ key }})</option>
+            {% endfor %}
+        </select></p>
+        <p><input type="submit" class="btn-primary" value="Export" name="comand"></p>
+        <p><a href="{{ airspace_file }}">{{ airspace_file }}</a></p>
+        <p>{{ result }}</p>
+    </form>
+</div>
+{% endblock %}
